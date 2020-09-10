@@ -31,7 +31,7 @@ class MultiColumns(CMSPlugin):
         parent_link=True,
         on_delete=models.CASCADE,
     )
-    class = models.CharField(
+    add_class = models.CharField(
         _("class"),
         max_length=50, null=True, blank=True    )
 
