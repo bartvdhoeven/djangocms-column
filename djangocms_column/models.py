@@ -31,6 +31,9 @@ class MultiColumns(CMSPlugin):
         parent_link=True,
         on_delete=models.CASCADE,
     )
+    class = models.CharField(
+        _("class"),
+        max_length=50, null=True, blank=True    )
 
     def __str__(self):
         plugins = self.child_plugin_instances or []
