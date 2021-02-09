@@ -1,5 +1,5 @@
 {% load cms_tags %}
-<div class="multicolumn{{ instance.num_children }} clearfix">
+<div class="columns is-mobile is-multiline mt-0 pb-0 mb-0 {{instance.add_class}}">
 {% for plugin in instance.child_plugin_instances %}
   	{% render_plugin plugin %}
 {% endfor %}
