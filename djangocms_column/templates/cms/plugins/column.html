@@ -1,6 +1,16 @@
 {% load cms_tags %}
-<div class="column" style="width: {{ instance.width }}; float: left;">
+{% spaceless %}<div class="
+column{% if instance.width == '100%' %} is-12{% endif %}
+{% if instance.width == '75%' %} is-full-mobile is-6-tablet is-9-desktop{% endif %}
+{% if instance.width == '66.66%' %} is-full-mobile is-6-tablet is-8-desktop{% endif %}
+{% if instance.width == '66%' %} is-full-mobile is-6-tablet is-8-desktop{% endif %}
+{% if instance.width == '50%' %} is-full-mobile is-6-tablet is-6-desktop{% endif %}
+{% if instance.width == '33.33%' %} is-full-mobile is-6-tablet is-4-desktop{% endif %}
+{% if instance.width == '33%' %} is-full-mobile is-6-tablet is-4-desktop{% endif %}
+{% if instance.width == '25%' %} is-full-mobile is-6-tablet is-3-desktop{% endif %}
+{% if instance.width == '10%' %} is-half-mobile is-one-quarter-tablet is-2-widescreen {% endif %} "><div class="inner">{% endspaceless %}
 {% for plugin in instance.child_plugin_instances %}
-    	{% render_plugin plugin %}
-{% endfor %}
-</div>
+
+		{% render_plugin plugin %}
+		
+{% endfor %}</div></div>
