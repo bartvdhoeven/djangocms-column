@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AddField(
-            model_name='columns',
+            model_name='column',
             name='add_class',
             field=models.CharField(blank=True, max_length=50, null=True, verbose_name='class'),
         ),
