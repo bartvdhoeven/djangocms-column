@@ -8,7 +8,7 @@ column{% if instance.width == '100%' %} is-12{% endif %}
 {% if instance.width == '33.33%' %} is-full-mobile is-6-tablet is-4-desktop{% endif %}
 {% if instance.width == '33%' %} is-full-mobile is-6-tablet is-4-desktop{% endif %}
 {% if instance.width == '25%' %} is-full-mobile is-6-tablet is-3-desktop{% endif %}
-{% if instance.width == '10%' %} is-half-mobile is-one-quarter-tablet is-2-widescreen {% endif %} {{ instance.add_class }}"><div class="inner">{% endspaceless %}
+{% if instance.width == '10%' %} is-half-mobile is-one-quarter-tablet is-2-widescreen {% endif %}"><div class="inner {{ instance.add_class }}">{% endspaceless %}
 {% for plugin in instance.child_plugin_instances %}
 
 		{% render_plugin plugin %}
