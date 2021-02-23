@@ -20,10 +20,9 @@ else:
     )
 
 BG_CHOICES = (
-    ('', _("Default")),
     ('has-background-white', _("White")),
-    ('has-background-black', _("Black")),
-    ('has-background-purple', _("Purple")),
+    ('has-background-black has-text-white', _("Black")),
+    ('has-background-purple has-text-white', _("Purple")),
 )
 
 @python_2_unicode_compatible
