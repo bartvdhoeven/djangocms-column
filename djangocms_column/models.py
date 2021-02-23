@@ -19,6 +19,12 @@ else:
         ('100%', _('100%')),
     )
 
+BG_CHOICES = (
+    ('', _("Default")),
+    ('has-background-white', _("White")),
+    ('has-background-black', _("Black")),
+    ('has-background-purple', _("Purple")),
+)
 
 @python_2_unicode_compatible
 class MultiColumns(CMSPlugin):
@@ -33,7 +39,7 @@ class MultiColumns(CMSPlugin):
     )
     add_class = models.CharField(
         _("class"),
-        max_length=50, null=True, blank=True    )
+        max_length=50, null=True, blank=True)
 
     def __str__(self):
         plugins = self.child_plugin_instances or []
@@ -56,6 +62,13 @@ class Column(CMSPlugin):
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
         on_delete=models.CASCADE,
+    )
+
+    add_class = models.CharField(
+        _("Background"),
+        choices=BG_CHOICES,
+        default=BG_CHOICES[0][0],
+        max_length=50
     )
 
     def __str__(self):
