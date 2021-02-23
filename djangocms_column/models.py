@@ -64,11 +64,9 @@ class Column(CMSPlugin):
     )
 
     add_class = models.CharField(
-        _("Background"),
-        choices=BG_CHOICES,
-        default=BG_CHOICES[0][0],
-        max_length=50
-    )
+        _("class"),
+        max_length=50, null=True, blank=True)
+
 
     def __str__(self):
         return u"%s" % self.get_width_display()
